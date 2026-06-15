@@ -1,0 +1,65 @@
+.preferences-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    background-color: #f4f4f4; /* Fond clair de la page */
+    margin: 0 auto; /* Centrer le wrapper horizontalement */
+    width: 65%; /* Rend le conteneur plus large (80% de la largeur de la fenêtre) */
+    max-width: 1200px; /* Limite la largeur maximale du conteneur */
+    overflow: auto; /* Gérer le contenu qui dépasse */
+    padding: 20px; /* Ajouter un padding pour l'espacement */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce autour du conteneur */
+    border-radius: 10px; /* Coins arrondis */
+    font-family: 'Arial', sans-serif; /* Police plus douce */
+    flex-direction: column;
+}
+
+.form-group {
+    margin-top:20px;
+}
+
+
+.form-title {
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+
+.preference-section { margin-bottom: 15px;
+margin-top: 20px}
+.preference-question { font-size: 1.2rem; margin-bottom: 5px; color: #555; /* Couleur plus douce */ }
+.preference-section label {
+    font-weight: normal; /* Pas de gras */
+    color: #555; /* Couleur plus douce */
+}
+
+.preference-section select,
+.preference-section input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: orange; /* Couleur plus douce */
+}
+
+.submit-button {
+    padding: 1.2rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.form-label {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    color: #555;
+}
+
+.checkbox-group-container { display: flex; flex-wrap: wrap; gap: 10px; /* Espace entre les checkboxes */ }
+.checkbox-group { display: flex; align-items: center; /* Aligner verticalement */ font-size: 1rem; margin-right: 20px; /* Espace entre les groupes de cases */ color: #555; /* Couleur plus douce */ }
+.checkbox-group input[type="checkbox"] { margin-right: 8px; /* Espace entre la case et le texte */ }
+

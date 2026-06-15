@@ -1,0 +1,74 @@
+stages:
+  - install
+  - test
+  - build
+  - deploy
+
+# Étape 1 : Installer les dépendances
+install_dependencies:
+  stage: install
+  image: node:20
+  script:
+    - cd frontend/pimp-my-fridge
+    - npm install
+    - cd ../../backend
+    - npm install
+    - cd  ..
+  artifacts:
+    paths:
+      - frontend/pimp-my-fridge/node_modules/
+      - backend/node_modules/
+  only: 
+    - dev 
+    - main
+
+# Étape 2 : Tester le frontend
+test_frontend:
+  stage: test
+  image: node:20
+  script:
+    - cd frontend/pimp-my-fridge
+    - npm test -- --watchAll=false
+    - cd ../..
+  only: 
+    - dev 
+    - main
+
+# Étape 3 : Tester le backend
+# test_backend:
+#   stage: test
+#   image: node:20
+#   services:
+#     - postgres:13
+#   variables:
+#     POSTGRES_USER: your_username
+#     POSTGRES_PASSWORD: your_password
+#     POSTGRES_DB: your_database_name
+#   script:
+#     - cd backend
+#     - npm test
+#     - cd ..
+
+# Étape 4 : Build du frontend
+build_frontend:
+  stage: build
+  image: node:20
+  script:
+    - cd frontend/pimp-my-fridge
+    - npm run build
+  artifacts:
+    paths:
+      - frontend/build/
+  only: 
+    - dev 
+    - main
+
+# Étape 5 : Déploiement
+# deploy:
+#   stage: deploy
+#   image: alpine:latest
+#   script:
+#     - echo "Déploiement en cours..."
+#     # Ajoute ici les scripts pour déployer ton application (par exemple, rsync, SCP, ou via un service cloud).
+#   only:
+#     - main

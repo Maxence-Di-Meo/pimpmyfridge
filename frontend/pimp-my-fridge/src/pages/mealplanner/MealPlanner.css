@@ -1,0 +1,137 @@
+.meal-card {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre portée pour un effet 3D */
+    transition: transform 0.3s ease; /* Animation au survol */
+    background-color: white; /* Assure que les cartes ont un fond blanc */
+}
+
+.meal-card:hover {
+    transform: translateY(-5px); /* Effet de remontée au survol */
+}
+
+/* Style des boutons d'acceptation et de rejet */
+.accept-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 0.5em 0.5em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size:0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.reject-btn {
+    color: white;
+    background-color: lightsalmon;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size:0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-all-btn {
+    display: flex;
+    padding: 0.8rem 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+/* Modal de recette */
+.recipe-modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus marquée pour se détacher du fond */
+    z-index: 1000;
+    width: 80%; /* Ajuste la largeur de la modal */
+    max-width: 500px; /* Limite la taille de la modal */
+}
+
+/* Styles des événements du calendrier */
+.fc-daygrid-event {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: black;
+    text-align: center; /* Centrer le texte */
+    background-color: transparent; /* Évite le fond bleu indésirable */
+}
+
+/* Couleurs personnalisées pour chaque type de repas */
+.fc-event[data-position-id="1"] {
+    background-color: #f4b400; /* Jaune pour le matin */
+}
+
+.fc-event[data-position-id="2"] {
+    background-color: #0f9d58; /* Vert pour le midi */
+}
+
+.fc-event[data-position-id="3"] {
+    background-color: #4285f4; /* Bleu pour le soir, mais uniquement pour ce cas spécifique */
+}
+
+.full-calendar-container {
+    overflow-y: auto; /* Ajoute une barre de défilement si le contenu dépasse la hauteur maximale */
+}
+
+/* Style de la page des recettes */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card de recette */
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre portée pour un effet 3D */
+    transition: transform 0.3s ease; /* Animation au survol */
+    background-color: white; /* Assure que les cartes ont un fond blanc */
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px); /* Effet de remontée au survol */
+}
+
+/* Image de la recette */
+.recipe-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px; /* Coins arrondis de l'image */
+}
+
+/* Titre de la recette */
+.recipe-title {
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f8f8f8;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
